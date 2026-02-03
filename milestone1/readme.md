@@ -2,6 +2,10 @@ Milestone 1 – Model Serving with Cloud Run and Cloud Functions
 
 ============================================================
 
+Project Name: mlops-milestone-1
+Course: IDS 568 – MLOps
+
+------------------------------------------------------------
 1. Project Overview
 ------------------------------------------------------------
 
@@ -52,7 +56,7 @@ Example request:
 
 Example response:
 {
-  "prediction": 9.999999999999998,
+  "prediction": 10.0,
   "version": "v1.0"
 }
 
@@ -94,18 +98,16 @@ Container build process:
 3. Cloud Run pulls the image and runs containers from it.
 
 Cloud Run details:
+- Project: mlops-milestone-1
 - Region: us-central1
 - Public access: Enabled (unauthenticated)
 
 Cloud Run endpoint:
-POST https://<PASTE-YOUR-CLOUD-RUN-URL-HERE>/predict
+POST https://milestone1-api-938213003679.us-central1.run.app/predict
 
 Public access verification:
 - The endpoint was tested using curl without authentication.
 - HTTP 200 response confirms the service is publicly accessible.
-
-Note:
-- The /predict endpoint is POST-only and is intended for API clients, not browsers.
 
 ------------------------------------------------------------
 6. Cloud Functions Deployment (Serverless)
@@ -120,14 +122,13 @@ How Cloud Functions work:
 - No container or server management is required.
 
 Cloud Function details:
+- Project: mlops-milestone-1
 - Runtime: Python
 - Region: us-central1
 - Trigger type: HTTP
 
 Cloud Function endpoint:
-POST https://us-central1-<PASTE-YOUR-PROJECT-ID>.cloudfunctions.net/predict
-
-The input and output format is identical to the Cloud Run API.
+POST https://us-central1-mlops-milestone-1.cloudfunctions.net/predict
 
 ------------------------------------------------------------
 7. Cold Start vs Warm Request Behavior
@@ -174,7 +175,28 @@ Cloud Functions:
 - Cloud Functions rely on managed runtimes provided by Google.
 
 ------------------------------------------------------------
-10. Project Structure
+10. Final Inference Verification (curl Test)
+------------------------------------------------------------
+
+Cloud Run curl test:
+
+curl -X POST https://milestone1-api-938213003679.us-central1.run.app/predict \
+  -H "Content-Type: application/json" \
+  -d '{"features":[1,2,3]}'
+
+Expected response format:
+{
+  "prediction": 10.0,
+  "version": "v1.0"
+}
+
+This confirms:
+- Public access is enabled
+- No authentication is required
+- The model loads correctly and returns predictions
+
+------------------------------------------------------------
+11. Project Structure
 ------------------------------------------------------------
 
 milestone1/
@@ -190,7 +212,7 @@ milestone1/
 └── README.txt
 
 ------------------------------------------------------------
-11. Checklist Confirmation
+12. Checklist Confirmation
 ------------------------------------------------------------
 
 - FastAPI container vs Cloud Function comparison included
@@ -202,9 +224,10 @@ milestone1/
 - API usage examples provided
 - Model-API interaction clearly described
 - Deployment URLs included and publicly accessible
+- Final curl-based inference verification included
 
 ------------------------------------------------------------
-12. Final Summary
+13. Final Summary
 ------------------------------------------------------------
 
 In this milestone, a trained machine learning model was successfully served
