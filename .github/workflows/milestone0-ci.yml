@@ -1,4 +1,4 @@
-name: Milestone0-CI
+name: Milestone 0 CI/CD
 
 on:
   push:
@@ -7,6 +7,10 @@ on:
   pull_request:
     paths:
       - 'milestone0/**'
+
+permissions:
+  id-token: write
+  contents: read
 
 jobs:
   test:
