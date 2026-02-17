@@ -1,5 +1,8 @@
 # Milestone 2: Containerized ML Service Deployment Pipeline
 
+workflow status badge : 
+[![Milestone 2 CI/CD](https://github.com/santhoshprathik1530/IDS568-MLOPS-Assignments/actions/workflows/milestone2-ci.yml/badge.svg?branch=main)](https://github.com/santhoshprathik1530/IDS568-MLOPS-Assignments/actions/workflows/milestone2-ci.yml)
+
 ## Project Overview
 
 This milestone demonstrates a **production-ready ML service deployment system** that integrates containerization best practices with automated CI/CD workflows. You will build a complete end-to-end solution that emphasizes **security, reproducibility, and automation**—fundamental skills for modern ML engineering roles.
