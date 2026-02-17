@@ -62,10 +62,10 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            -t us-central1-docker.pkg.dev/mlops-milestone-1/mlops-images/milestone2:${{ github.ref_name }} \
+            -t us-central1-docker.pkg.dev/mlops-milestone-1/mlops-repo/milestone2:${{ github.ref_name }} \
             .
 
       - name: Push Docker image
         run: |
           docker push \
-            us-central1-docker.pkg.dev/mlops-milestone-1/mlops-images/milestone2:${{ github.ref_name }}
+            us-central1-docker.pkg.dev/mlops-milestone-1/mlops-repo/milestone2:${{ github.ref_name }}
