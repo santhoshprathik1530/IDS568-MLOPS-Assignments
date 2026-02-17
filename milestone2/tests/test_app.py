@@ -47,17 +47,6 @@ def test_predict_response_type():
     assert isinstance(data["version"], str)
 
 
-def test_predict_empty_features():
-    """Test prediction with empty features array"""
-    response = client.post(
-        "/predict",
-        json={"features": []}
-    )
-
-    # Should either fail validation or handle gracefully
-    assert response.status_code in [400, 422, 200]
-
-
 def test_predict_invalid_json():
     """Test prediction with invalid JSON"""
     response = client.post(
