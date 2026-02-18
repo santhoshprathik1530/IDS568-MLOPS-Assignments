@@ -1,9 +1,8 @@
 name: Milestone 2 CI/CD
+run-name: Release ${{ github.ref_name }} by @${{ github.actor }}
 
 on:
   push:
-    branches:
-      - main
     tags:
       - "v*.*.*"
 
