@@ -2,6 +2,8 @@ name: Milestone 2 CI/CD
 
 on:
   push:
+    branches:
+      - main
     tags:
       - "v*.*.*"
 
