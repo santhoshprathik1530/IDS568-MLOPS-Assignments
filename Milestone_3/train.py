@@ -44,13 +44,15 @@ def train_model(n_estimators=100, max_depth=5, random_state=42, data_version="ir
 
         accuracy = float(accuracy_score(y_test, preds))
         f1 = float(f1_score(y_test, preds, average="weighted"))
+        loss = 1.0 - accuracy
+
 
         mlflow.log_params({
             "n_estimators": n_estimators, "max_depth": max_depth, "random_state": random_state,
             "data_version": data_version, "train_rows": len(train_df), "test_rows": len(test_df),
             "model_name": model_name
         })
-        mlflow.log_metrics({"accuracy": accuracy, "f1_score": f1})
+        mlflow.log_metrics({"accuracy": accuracy, "f1_score": f1, "loss": loss})
 
         model_dir = Path("artifacts/models") / run_id
         model_dir.mkdir(parents=True, exist_ok=True)
@@ -73,7 +75,7 @@ def train_model(n_estimators=100, max_depth=5, random_state=42, data_version="ir
             "config_sha256": prep["config_sha256"]
         })
 
-        out = {"run_id": run_id, "accuracy": accuracy, "f1_score": f1}
+        out = {"run_id": run_id, "accuracy": accuracy, "f1_score": f1, "loss": loss}
         Path(output_dir, "metrics_latest.json").write_text(json.dumps(out, indent=2))
         print(json.dumps(out, indent=2))
 
