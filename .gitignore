@@ -20,3 +20,9 @@ Milestone_3/outputs/
 Milestone_3/*.db
 Milestone_3/airflow.cfg
 Milestone_3/airflow-webserver.pid
+
+# Explicitly ignored submission-excluded files
+Milestone 3.pdf
+Milestone 3 - Submission Checklist.pdf
+Milestone_3/Dockerfile.airflow
+Milestone_3/webserver_config.py
