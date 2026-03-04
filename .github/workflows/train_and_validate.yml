@@ -41,6 +41,7 @@ jobs:
             --experiment-name "$MLFLOW_EXPERIMENT_NAME" \
             --tracking-uri "$MLFLOW_TRACKING_URI" \
             --model-name "$MLFLOW_MODEL_NAME" \
+            --run-name "ci-rf-ne120-md6-${{ github.run_number }}" \
             --data-version "ci_${{ github.sha }}" \
             --n-estimators 120 \
             --max-depth 6

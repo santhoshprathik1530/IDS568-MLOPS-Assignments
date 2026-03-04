@@ -1,0 +1,22 @@
+# OS/editor noise
+.DS_Store
+**/.DS_Store
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Local virtual environments
+.venv/
+venv/
+
+# Runtime artifacts produced during Milestone 3 local runs
+Milestone_3/.airflow/
+Milestone_3/mlruns/
+Milestone_3/artifacts/
+Milestone_3/logs/
+Milestone_3/outputs/
+Milestone_3/*.db
+Milestone_3/airflow.cfg
+Milestone_3/airflow-webserver.pid

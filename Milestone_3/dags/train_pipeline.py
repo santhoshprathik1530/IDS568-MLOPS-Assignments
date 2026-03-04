@@ -51,6 +51,7 @@ def train_model(**context):
     data_version = conf.get("data_version", f"airflow_{context['ds_nodash']}")
     n_estimators = int(conf.get("n_estimators", 100))
     max_depth = int(conf.get("max_depth", 5))
+    run_name = conf.get("run_name", f"airflow-rf-ne{n_estimators}-md{max_depth}-dv-{data_version}")
 
     tracking_uri = os.getenv("MLFLOW_TRACKING_URI", "sqlite:////opt/airflow/mlflow.db")
     exp = os.getenv("MLFLOW_EXPERIMENT_NAME", "milestone3-airflow")
@@ -72,6 +73,8 @@ def train_model(**context):
             str(n_estimators),
             "--max-depth",
             str(max_depth),
+            "--run-name",
+            run_name,
         ],
         check=True,
     )

@@ -21,9 +21,17 @@ def git_commit():
     except Exception:
         return "unknown"
 
-def train_model(n_estimators=100, max_depth=5, random_state=42, data_version="iris_v1",
-                experiment_name="milestone3-train", tracking_uri="sqlite:///mlflow.db",
-                model_name="milestone3-iris-model", output_dir="outputs"):
+def train_model(
+    n_estimators=100,
+    max_depth=5,
+    random_state=42,
+    data_version="iris_v1",
+    experiment_name="milestone3-train",
+    tracking_uri="sqlite:///mlflow.db",
+    model_name="milestone3-iris-model",
+    output_dir="outputs",
+    run_name=None,
+):
     mlflow.set_tracking_uri(tracking_uri)
     mlflow.set_experiment(experiment_name)
 
@@ -36,7 +44,8 @@ def train_model(n_estimators=100, max_depth=5, random_state=42, data_version="ir
 
     Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-    with mlflow.start_run() as run:
+    derived_run_name = run_name or f"rf-ne{n_estimators}-md{max_depth}-dv-{data_version}"
+    with mlflow.start_run(run_name=derived_run_name) as run:
         run_id = run.info.run_id
         model = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, random_state=random_state)
         model.fit(X_train, y_train)
@@ -68,6 +77,8 @@ def train_model(n_estimators=100, max_depth=5, random_state=42, data_version="ir
         mlflow.set_tags({
             "git_commit": git_commit(),
             "data_version": data_version,
+            "model_family": "random_forest",
+            "run_purpose": "training",
             "model_sha256": file_hash(model_file, "sha256"),
             "model_md5": file_hash(model_file, "md5"),
             "train_sha256": prep["train_sha256"],
@@ -89,5 +100,16 @@ if __name__ == "__main__":
     p.add_argument("--tracking-uri", default=os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"))
     p.add_argument("--model-name", default=os.getenv("MLFLOW_MODEL_NAME", "milestone3-iris-model"))
     p.add_argument("--output-dir", default="outputs")
+    p.add_argument("--run-name", default=None)
     a = p.parse_args()
-    train_model(a.n_estimators, a.max_depth, a.random_state, a.data_version, a.experiment_name, a.tracking_uri, a.model_name, a.output_dir)
+    train_model(
+        a.n_estimators,
+        a.max_depth,
+        a.random_state,
+        a.data_version,
+        a.experiment_name,
+        a.tracking_uri,
+        a.model_name,
+        a.output_dir,
+        a.run_name,
+    )

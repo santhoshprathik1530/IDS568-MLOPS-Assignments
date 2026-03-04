@@ -7,3 +7,5 @@ outputs/
 *.db
 __pycache__/
 .DS_Store
+airflow.cfg
+airflow-webserver.pid
