@@ -8,7 +8,7 @@ Framework: Ray | Language: Python 3.9+
 ## Repository Structure
 
 ```
-ids568-milestone4-[netid]/
+ids568-milestone4/
 ├── pipeline.py          # Distributed feature engineering (Ray vs pandas)
 ├── generate_data.py     # Synthetic data generator (10M+ rows)
 ├── requirements.txt     # Python dependencies
@@ -32,10 +32,6 @@ No Docker required. Everything runs locally.
 
 ### 1. Clone the repository
 
-```bash
-git clone https://github.com/[your-github]/ids568-milestone4-[netid].git
-cd ids568-milestone4-[netid]
-```
 
 ### 2. Create and activate a virtual environment
 
