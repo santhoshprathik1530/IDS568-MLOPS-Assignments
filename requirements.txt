@@ -1,0 +1,15 @@
+
+# Milestone 4 — Distributed & Streaming Pipeline
+# Install with: pip install -r requirements.txt
+# Tested on Python 3.9, 3.10, 3.11
+ 
+# Core data stack
+numpy>=1.24.0
+pandas>=2.0.0
+pyarrow>=14.0.0        # Parquet I/O
+ 
+# Distributed computing
+ray>=2.9.3             # Distributed task execution
+ 
+# System metrics
+psutil>=5.9.0          # Memory / CPU measurement
