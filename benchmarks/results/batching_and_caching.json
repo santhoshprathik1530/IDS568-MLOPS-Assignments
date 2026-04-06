@@ -1,0 +1,176 @@
+{
+  "name": "batching_and_caching",
+  "concurrency": 5,
+  "total_requests": 20,
+  "successful": 20,
+  "failed": 0,
+  "total_time_sec": 0.433,
+  "throughput_rps": 46.15,
+  "avg_latency_ms": 107.58,
+  "p50_latency_ms": 107.07,
+  "p95_latency_ms": 112.81,
+  "p99_latency_ms": 112.81,
+  "cache_hit_rate": 0.0,
+  "per_request": [
+    {
+      "prompt": "How do recommendation systems work?",
+      "latency_ms": 112.81,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of containerization in softwar",
+      "latency_ms": 111.15,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does encryption protect data on the internet?",
+      "latency_ms": 111.07,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 111.81,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the process of DNA replication.",
+      "latency_ms": 111.76,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of containerization in softwar",
+      "latency_ms": 106.26,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain how a compiler differs from an interpreter",
+      "latency_ms": 105.95,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how caching improves system performance.",
+      "latency_ms": 105.53,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 106.36,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 106.26,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 107.42,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 107.07,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 107.56,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 107.23,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 107.09,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how caching improves system performance.",
+      "latency_ms": 105.53,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 105.29,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 105.2,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the challenges of deploying models at sca",
+      "latency_ms": 105.12,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how caching improves system performance.",
+      "latency_ms": 105.06,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    }
+  ]
+}

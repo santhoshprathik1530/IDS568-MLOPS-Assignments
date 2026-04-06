@@ -1,0 +1,19 @@
+# LLM Inference Optimization Server - Dependencies
+# Core server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+pydantic>=2.0.0
+
+# LLM inference
+torch>=2.0.0
+transformers>=4.35.0
+
+# Async HTTP client (for benchmarks / load generator)
+aiohttp>=3.9.0
+
+# Visualization
+matplotlib>=3.7.0
+numpy>=1.24.0
+
+# Optional: Redis backend for caching
+# redis>=5.0.0

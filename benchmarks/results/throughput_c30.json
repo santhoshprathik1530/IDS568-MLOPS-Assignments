@@ -1,0 +1,496 @@
+{
+  "name": "throughput_c30",
+  "concurrency": 30,
+  "total_requests": 60,
+  "successful": 60,
+  "failed": 0,
+  "total_time_sec": 0.169,
+  "throughput_rps": 354.71,
+  "avg_latency_ms": 26.74,
+  "p50_latency_ms": 20.45,
+  "p95_latency_ms": 142.68,
+  "p99_latency_ms": 142.77,
+  "cache_hit_rate": 0.0,
+  "per_request": [
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 23.8,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of containerization in softwar",
+      "latency_ms": 23.82,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the CAP theorem in distributed computing.",
+      "latency_ms": 23.65,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the CAP theorem in distributed computing.",
+      "latency_ms": 21.23,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 21.03,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does version control help in software developm",
+      "latency_ms": 21.04,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the main differences between Python and J",
+      "latency_ms": 20.83,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 23.06,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 22.89,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 20.49,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does photosynthesis work in plants?",
+      "latency_ms": 20.19,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the main causes of climate change?",
+      "latency_ms": 22.42,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of supply and demand in econom",
+      "latency_ms": 21.8,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the significance of the Turing test?",
+      "latency_ms": 20.17,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does version control help in software developm",
+      "latency_ms": 22.36,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does photosynthesis work in plants?",
+      "latency_ms": 22.14,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the key principles of object-oriented pro",
+      "latency_ms": 21.53,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 22.08,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does encryption protect data on the internet?",
+      "latency_ms": 21.15,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of transfer learning in deep l",
+      "latency_ms": 21.82,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how a neural network learns from data.",
+      "latency_ms": 18.99,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 21.68,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the MapReduce programming model.",
+      "latency_ms": 18.92,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the CAP theorem in distributed computing.",
+      "latency_ms": 19.47,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does a database index improve query performanc",
+      "latency_ms": 19.36,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does encryption protect data on the internet?",
+      "latency_ms": 21.42,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the benefits of microservices architectur",
+      "latency_ms": 21.55,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the benefits of microservices architectur",
+      "latency_ms": 21.25,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the main differences between Python and J",
+      "latency_ms": 21.21,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the MapReduce programming model.",
+      "latency_ms": 20.45,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the main differences between Python and J",
+      "latency_ms": 5.05,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the significance of the Turing test?",
+      "latency_ms": 4.87,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between REST and GraphQL AP",
+      "latency_ms": 4.65,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 4.58,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 4.53,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 4.47,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how a neural network learns from data.",
+      "latency_ms": 4.41,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does photosynthesis work in plants?",
+      "latency_ms": 4.35,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the key principles of object-oriented pro",
+      "latency_ms": 4.3,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does a database index improve query performanc",
+      "latency_ms": 4.25,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 4.24,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 4.94,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the ethical concerns around AI in healthc",
+      "latency_ms": 5.07,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does photosynthesis work in plants?",
+      "latency_ms": 4.76,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the theory of relativity in simple terms.",
+      "latency_ms": 4.8,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How do recommendation systems work?",
+      "latency_ms": 4.46,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the significance of the Turing test?",
+      "latency_ms": 4.39,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the main causes of climate change?",
+      "latency_ms": 4.34,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 4.05,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 4.01,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 3.96,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of gradient descent in machine",
+      "latency_ms": 3.93,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 4.06,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 4.02,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how a neural network learns from data.",
+      "latency_ms": 142.75,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 142.77,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 142.68,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does version control help in software developm",
+      "latency_ms": 142.65,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 142.41,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 142.6,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    }
+  ]
+}

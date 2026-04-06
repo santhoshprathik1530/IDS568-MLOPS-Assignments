@@ -1,0 +1,176 @@
+{
+  "name": "caching_only_cold",
+  "concurrency": 5,
+  "total_requests": 20,
+  "successful": 20,
+  "failed": 0,
+  "total_time_sec": 6.865,
+  "throughput_rps": 2.91,
+  "avg_latency_ms": 1607.73,
+  "p50_latency_ms": 2132.28,
+  "p95_latency_ms": 2163.62,
+  "p99_latency_ms": 2163.62,
+  "cache_hit_rate": 0.2,
+  "per_request": [
+    {
+      "prompt": "Describe how a neural network learns from data.",
+      "latency_ms": 2019.85,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 2014.76,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Describe the process of DNA replication.",
+      "latency_ms": 2016.61,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "How does encryption protect data on the internet?",
+      "latency_ms": 2018.17,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 2019.46,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 2137.81,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 2162.34,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 2153.68,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What are the benefits of microservices architectur",
+      "latency_ms": 2149.51,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 2153.2,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the capital of France and its historical s",
+      "latency_ms": 2163.54,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain how a compiler differs from an interpreter",
+      "latency_ms": 2163.62,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 0.67,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 0.42,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 0.37,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What are the ethical concerns around AI in healthc",
+      "latency_ms": 2141.77,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the significance of the Turing test?",
+      "latency_ms": 2153.76,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 0.59,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 2132.28,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the capital of France and its historical s",
+      "latency_ms": 552.19,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    }
+  ]
+}

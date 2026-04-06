@@ -1,0 +1,176 @@
+{
+  "name": "baseline_no_optimization",
+  "concurrency": 5,
+  "total_requests": 20,
+  "successful": 20,
+  "failed": 0,
+  "total_time_sec": 9.37,
+  "throughput_rps": 2.13,
+  "avg_latency_ms": 2337.88,
+  "p50_latency_ms": 2118.02,
+  "p95_latency_ms": 3067.27,
+  "p99_latency_ms": 3067.27,
+  "cache_hit_rate": 0.0,
+  "per_request": [
+    {
+      "prompt": "What is the capital of France and its historical s",
+      "latency_ms": 3064.31,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of transfer learning in deep l",
+      "latency_ms": 3060.09,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 3067.27,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 3054.81,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between supervised and unsu",
+      "latency_ms": 3059.55,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the significance of the Turing test?",
+      "latency_ms": 2163.72,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain the theory of relativity in simple terms.",
+      "latency_ms": 2137.14,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 2123.85,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 2115.99,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What are the benefits of microservices architectur",
+      "latency_ms": 2119.76,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 2096.95,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 2088.55,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 2089.69,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain the theory of relativity in simple terms.",
+      "latency_ms": 2118.02,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 2100.72,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between supervised and unsu",
+      "latency_ms": 2073.79,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain the CAP theorem in distributed computing.",
+      "latency_ms": 2062.07,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 2065.8,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 2046.02,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What are the main causes of climate change?",
+      "latency_ms": 2049.47,
+      "cached": false,
+      "cache_status": "DISABLED",
+      "status_code": 200,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "cache": {
+    "hits": 0,
+    "misses": 90,
+    "bypasses": 0,
+    "evictions_ttl": 0,
+    "evictions_lru": 0,
+    "total_requests": 90,
+    "hit_rate": 0.0,
+    "current_size": 0,
+    "max_entries": 1000,
+    "ttl_seconds": 300.0
+  },
+  "batching": {
+    "total_requests": 90,
+    "total_batches": 18,
+    "avg_batch_size": 5.0,
+    "avg_batch_latency_ms": 0.0,
+    "size_triggered": 0,
+    "timeout_triggered": 18,
+    "pending_requests": 0,
+    "max_batch_size": 8,
+    "max_wait_ms": 100.0
+  }
+}

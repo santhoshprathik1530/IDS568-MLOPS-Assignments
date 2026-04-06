@@ -1,0 +1,216 @@
+{
+  "name": "throughput_c5",
+  "concurrency": 5,
+  "total_requests": 25,
+  "successful": 25,
+  "failed": 0,
+  "total_time_sec": 0.541,
+  "throughput_rps": 46.24,
+  "avg_latency_ms": 107.56,
+  "p50_latency_ms": 107.16,
+  "p95_latency_ms": 112.7,
+  "p99_latency_ms": 113.31,
+  "cache_hit_rate": 0.0,
+  "per_request": [
+    {
+      "prompt": "What are the ethical concerns around AI in healthc",
+      "latency_ms": 113.31,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between supervised and unsu",
+      "latency_ms": 112.7,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the theory of relativity in simple terms.",
+      "latency_ms": 111.87,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How do recommendation systems work?",
+      "latency_ms": 112.56,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of gradient descent in machine",
+      "latency_ms": 112.31,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how caching improves system performance.",
+      "latency_ms": 105.77,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the ethical concerns around AI in healthc",
+      "latency_ms": 105.8,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 105.6,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of supply and demand in econom",
+      "latency_ms": 105.58,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 105.51,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of supply and demand in econom",
+      "latency_ms": 108.31,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 108.51,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does encryption protect data on the internet?",
+      "latency_ms": 108.28,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of supply and demand in econom",
+      "latency_ms": 108.28,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does photosynthesis work in plants?",
+      "latency_ms": 108.23,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the main causes of climate change?",
+      "latency_ms": 107.22,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 107.49,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain how a compiler differs from an interpreter",
+      "latency_ms": 107.13,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the challenges of deploying models at sca",
+      "latency_ms": 107.16,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does version control help in software developm",
+      "latency_ms": 107.09,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does load balancing work in distributed system",
+      "latency_ms": 104.76,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 104.13,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the CAP theorem in distributed computing.",
+      "latency_ms": 103.88,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 103.8,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between supervised and unsu",
+      "latency_ms": 103.7,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    }
+  ]
+}

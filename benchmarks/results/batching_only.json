@@ -1,0 +1,176 @@
+{
+  "name": "batching_only",
+  "concurrency": 5,
+  "total_requests": 20,
+  "successful": 20,
+  "failed": 0,
+  "total_time_sec": 0.424,
+  "throughput_rps": 47.13,
+  "avg_latency_ms": 105.5,
+  "p50_latency_ms": 105.6,
+  "p95_latency_ms": 107.37,
+  "p99_latency_ms": 107.37,
+  "cache_hit_rate": 0.0,
+  "per_request": [
+    {
+      "prompt": "What are the main causes of climate change?",
+      "latency_ms": 107.37,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 107.34,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 107.21,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 107.18,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the CAP theorem in distributed computing.",
+      "latency_ms": 107.03,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What are the main causes of climate change?",
+      "latency_ms": 105.97,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of containerization in softwar",
+      "latency_ms": 105.72,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 105.71,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 105.6,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 105.61,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 104.93,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 104.52,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the architecture of a transformer model.",
+      "latency_ms": 104.61,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 104.52,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does a database index improve query performanc",
+      "latency_ms": 104.45,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 104.48,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the capital of France and its historical s",
+      "latency_ms": 104.53,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does load balancing work in distributed system",
+      "latency_ms": 104.42,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is continuous integration and continuous depl",
+      "latency_ms": 104.39,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain how a compiler differs from an interpreter",
+      "latency_ms": 104.37,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    }
+  ]
+}

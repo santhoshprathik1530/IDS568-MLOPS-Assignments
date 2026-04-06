@@ -1,0 +1,176 @@
+{
+  "name": "caching_only_warm",
+  "concurrency": 5,
+  "total_requests": 20,
+  "successful": 20,
+  "failed": 0,
+  "total_time_sec": 3.302,
+  "throughput_rps": 6.06,
+  "avg_latency_ms": 696.97,
+  "p50_latency_ms": 1.93,
+  "p95_latency_ms": 2016.54,
+  "p99_latency_ms": 2016.54,
+  "cache_hit_rate": 0.6,
+  "per_request": [
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 3.76,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between REST and GraphQL AP",
+      "latency_ms": 2016.33,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "How does version control help in software developm",
+      "latency_ms": 2010.05,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is reinforcement learning and where is it use",
+      "latency_ms": 2016.54,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 1.93,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 1.52,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 0.48,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is machine learning?",
+      "latency_ms": 0.58,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Describe how caching improves system performance.",
+      "latency_ms": 2006.59,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of gradient descent in machine",
+      "latency_ms": 2012.92,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What are the main causes of climate change?",
+      "latency_ms": 1291.38,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What are the benefits of microservices architectur",
+      "latency_ms": 1.6,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 0.72,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 0.83,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "Explain the concept of supply and demand in econom",
+      "latency_ms": 1287.75,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the capital of France and its historical s",
+      "latency_ms": 0.54,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is the significance of the Turing test?",
+      "latency_ms": 0.74,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "How does gradient descent work?",
+      "latency_ms": 0.55,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What are the key principles of object-oriented pro",
+      "latency_ms": 1284.12,
+      "cached": false,
+      "cache_status": "MISS",
+      "status_code": 200,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 0.39,
+      "cached": true,
+      "cache_status": "HIT",
+      "status_code": 200,
+      "error": null
+    }
+  ]
+}

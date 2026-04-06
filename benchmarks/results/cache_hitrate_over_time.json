@@ -1,0 +1,50 @@
+[
+  {
+    "wave": 1,
+    "repeat_ratio": 0.1,
+    "requests": 15,
+    "wave_hit_rate": 0.0,
+    "cumulative_hit_rate": 0.0,
+    "avg_latency_ms": 107.66
+  },
+  {
+    "wave": 2,
+    "repeat_ratio": 0.25,
+    "requests": 15,
+    "wave_hit_rate": 0.0,
+    "cumulative_hit_rate": 0.0,
+    "avg_latency_ms": 107.32
+  },
+  {
+    "wave": 3,
+    "repeat_ratio": 0.4,
+    "requests": 15,
+    "wave_hit_rate": 0.0,
+    "cumulative_hit_rate": 0.0,
+    "avg_latency_ms": 107.19
+  },
+  {
+    "wave": 4,
+    "repeat_ratio": 0.55,
+    "requests": 15,
+    "wave_hit_rate": 0.0,
+    "cumulative_hit_rate": 0.0,
+    "avg_latency_ms": 106.21
+  },
+  {
+    "wave": 5,
+    "repeat_ratio": 0.7,
+    "requests": 15,
+    "wave_hit_rate": 0.0,
+    "cumulative_hit_rate": 0.0,
+    "avg_latency_ms": 106.22
+  },
+  {
+    "wave": 6,
+    "repeat_ratio": 0.85,
+    "requests": 15,
+    "wave_hit_rate": 0.0,
+    "cumulative_hit_rate": 0.0,
+    "avg_latency_ms": 107.32
+  }
+]

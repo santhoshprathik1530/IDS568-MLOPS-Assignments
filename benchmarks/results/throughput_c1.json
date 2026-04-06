@@ -1,0 +1,96 @@
+{
+  "name": "throughput_c1",
+  "concurrency": 1,
+  "total_requests": 10,
+  "successful": 10,
+  "failed": 0,
+  "total_time_sec": 1.06,
+  "throughput_rps": 9.43,
+  "avg_latency_ms": 105.85,
+  "p50_latency_ms": 105.28,
+  "p95_latency_ms": 112.94,
+  "p99_latency_ms": 112.94,
+  "cache_hit_rate": 0.0,
+  "per_request": [
+    {
+      "prompt": "What is a transformer model?",
+      "latency_ms": 107.63,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is deep learning?",
+      "latency_ms": 104.26,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 105.21,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between supervised and unsu",
+      "latency_ms": 105.67,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Explain neural networks.",
+      "latency_ms": 105.35,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the significance of the Turing test?",
+      "latency_ms": 105.03,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe the process of DNA replication.",
+      "latency_ms": 105.28,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "Describe how a neural network learns from data.",
+      "latency_ms": 112.94,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "How does load balancing work in distributed system",
+      "latency_ms": 103.57,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    },
+    {
+      "prompt": "What is the difference between REST and GraphQL AP",
+      "latency_ms": 103.56,
+      "cached": false,
+      "cache_status": "",
+      "status_code": 500,
+      "error": null
+    }
+  ]
+}
