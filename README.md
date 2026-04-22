@@ -22,6 +22,18 @@ export OPENROUTER_MODEL="meta-llama/llama-3.1-8b-instruct"
 
 If your professor approved API-based evaluation, this repository uses OpenRouter for generation. You can override the model at runtime with `--llm-model`.
 
+## Model Configuration
+
+This project was evaluated with the following model configuration:
+
+- Model family: `meta-llama/Llama-3.1-8B-Instruct`
+- OpenRouter model slug: `meta-llama/llama-3.1-8b-instruct`
+- Size class: `8B`
+- Access path: OpenRouter API
+- Accommodation note: API-based inference was used with professor approval
+
+Both `rag_pipeline.py` and `agent_controller.py` use the same model path. By default they read `OPENROUTER_MODEL`, and you can override that with `--llm-model` on either script.
+
 ## Usage
 
 Run the RAG pipeline on a single question:
@@ -80,6 +92,30 @@ These documents cover the exact course concepts the milestone asks for: RAG arch
 - Runtime used for this evaluation: macOS arm64, Python `3.12.12`
 - Typical retrieval latency observed: about `77.5 ms`
 - Typical generation latency observed: about `12.2 s` on average, with one large tail-latency outlier
+
+## Serving and Invocation
+
+This repository does not start a local model server. Instead, both scripts send generation requests directly to OpenRouter using the configured API key and model slug.
+
+The exact invocation pattern used for evaluation was:
+
+```bash
+export OPENROUTER_API_KEY="your_openrouter_key"
+export OPENROUTER_MODEL="meta-llama/llama-3.1-8b-instruct"
+python rag_pipeline.py --evaluate --export-json rag_eval_results.json
+python agent_controller.py --evaluate --trace-dir agent_traces
+```
+
+This satisfies the README requirement to document the exact serving/inference path used for the final evaluated runs.
+
+## Runtime Environment
+
+- Operating system: macOS
+- Architecture: arm64 / Apple Silicon
+- Python version: `3.12.12`
+- Embedding stack: `sentence-transformers` with `all-MiniLM-L6-v2`
+- Retrieval index: `FAISS IndexFlatL2`
+- LLM inference path: OpenRouter-hosted `meta-llama/llama-3.1-8b-instruct`
 
 ## Submission Status
 
