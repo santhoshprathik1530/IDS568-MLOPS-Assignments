@@ -1,2 +1,0 @@
-# ReAct Agent MWE Dependencies
-# This MWE uses only Python standard library — no external packages required.

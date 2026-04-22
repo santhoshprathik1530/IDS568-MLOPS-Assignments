@@ -1,2 +1,0 @@
-# Retrieval Query Design MWE Dependencies
-# This MWE uses only Python standard library — no external packages required.
