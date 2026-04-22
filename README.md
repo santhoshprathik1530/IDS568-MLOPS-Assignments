@@ -1,48 +1,46 @@
-# Milestone 6: RAG Pipeline and Multi-Tool Agent
+# Milestone 6: RAG Pipeline and Agent Workflow
 
-This repository contains a local Retrieval-Augmented Generation (RAG) pipeline and a multi-tool agent built for IDS 568 Milestone 6.
+This repository contains my submission for IDS 568 Milestone 6. The project has two parts:
 
-Instructor accommodation note: the original milestone prefers local or self-hosted inference, but the professor approved API-based evaluation for this submission. This implementation therefore uses OpenRouter for the LLM calls.
+1. a retrieval-augmented generation pipeline
+2. a multi-tool agent that reuses the retriever as one of its tools
+
+The original milestone instructions prefer local or self-hosted inference. For this submission, I used OpenRouter with professor approval, and both the RAG pipeline and the agent were evaluated with the same 8B instruct model.
 
 ## Setup
 
 1. Create and activate a Python 3.10+ virtual environment.
-2. Install dependencies:
+2. Install the dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Export your OpenRouter credentials:
+3. Export the model configuration:
 
 ```bash
 export OPENROUTER_API_KEY="your_openrouter_key"
 export OPENROUTER_MODEL="meta-llama/llama-3.1-8b-instruct"
 ```
 
-If your professor approved API-based evaluation, this repository uses OpenRouter for generation. You can override the model at runtime with `--llm-model`.
-
-## Model Configuration
-
-This project was evaluated with the following model configuration:
+## Model Used
 
 - Model family: `meta-llama/Llama-3.1-8B-Instruct`
-- OpenRouter model slug: `meta-llama/llama-3.1-8b-instruct`
+- OpenRouter slug: `meta-llama/llama-3.1-8b-instruct`
 - Size class: `8B`
-- Access path: OpenRouter API
-- Accommodation note: API-based inference was used with professor approval
+- Serving path: OpenRouter API
 
-Both `rag_pipeline.py` and `agent_controller.py` use the same model path. By default they read `OPENROUTER_MODEL`, and you can override that with `--llm-model` on either script.
+Both `rag_pipeline.py` and `agent_controller.py` use the same model path. By default they read `OPENROUTER_MODEL`, but the model can also be overridden with `--llm-model`.
 
 ## Usage
 
-Run the RAG pipeline on a single question:
+Run the RAG pipeline on one question:
 
 ```bash
 python rag_pipeline.py --question "What is retrieval-augmented generation?"
 ```
 
-Run the 10-query RAG evaluation set:
+Run the 10-query RAG evaluation:
 
 ```bash
 python rag_pipeline.py --evaluate --export-json rag_eval_results.json
@@ -54,21 +52,24 @@ Run the agent on one task:
 python agent_controller.py --task "Explain when an agent should retrieve before summarizing."
 ```
 
-Run the 10-task agent evaluation set and export observable traces:
+Run the 10-task agent evaluation:
 
 ```bash
 python agent_controller.py --evaluate --trace-dir agent_traces
 ```
 
-## Architecture Overview
+## Project Structure
 
-- `rag_pipeline.py`: chunking, embeddings, FAISS indexing, retrieval, grounded generation, evaluation.
-- `agent_controller.py`: LLM-driven tool selection with retrieval, summarization, extraction, and exported traces.
-- `agent_traces/`: generated JSON traces for the 10 evaluation tasks.
+- `rag_pipeline.py`: document chunking, embeddings, FAISS indexing, retrieval, grounded answer generation, and evaluation
+- `agent_controller.py`: tool selection, retrieval integration, summarization/extraction tools, and trace export
+- `rag_evaluation_report.md`: Part 1 analysis
+- `agent_report.md`: Part 2 analysis
+- `rag_pipeline_diagram.md`: pipeline diagram
+- `agent_traces/`: exported trace files for the 10 agent tasks
 
 ## Knowledge Base
 
-The RAG knowledge base is a small in-repo corpus defined directly in `rag_pipeline.py`. It contains these eight source documents:
+The RAG knowledge base is a small course-focused corpus defined directly in `rag_pipeline.py`. It contains these eight source documents:
 
 - `rag_architecture.md`
 - `chunking_strategy.md`
@@ -79,25 +80,29 @@ The RAG knowledge base is a small in-repo corpus defined directly in `rag_pipeli
 - `agent_policy.md`
 - `failure_analysis.md`
 
-These documents cover the exact course concepts the milestone asks for: RAG architecture, chunking, embeddings, vector indexing, grounding, latency measurement, agent tool policy, and failure analysis.
+I used this smaller corpus to keep the retrieval behavior easy to inspect during evaluation.
 
-## Model Serving
+## Architecture Overview
 
-- Recommended final model: `meta-llama/llama-3.1-8b-instruct`
-- Size class: 8B
-- Serving stack: OpenRouter API
-- Runtime target for final evaluation: OpenRouter-backed hosted inference with instructor approval
-- Environment variable: `OPENROUTER_API_KEY`
-- Optional model override: `OPENROUTER_MODEL` or `--llm-model`
-- Runtime used for this evaluation: macOS arm64, Python `3.12.12`
-- Typical retrieval latency observed: about `77.5 ms`
-- Typical generation latency observed: about `12.2 s` on average, with one large tail-latency outlier
+The RAG pipeline follows a standard flow:
 
-## Serving and Invocation
+1. split each source document into overlapping chunks
+2. generate embeddings with `all-MiniLM-L6-v2`
+3. store vectors in `FAISS IndexFlatL2`
+4. retrieve the top-k chunks for a question
+5. build a grounded prompt with source information
+6. generate an answer with the instruct model
 
-This repository does not start a local model server. Instead, both scripts send generation requests directly to OpenRouter using the configured API key and model slug.
+The agent uses that same retriever and adds two more tools:
 
-The exact invocation pattern used for evaluation was:
+- `summarize_context`
+- `extract_evidence`
+
+The final controller policy is intentionally simple: retrieve first, optionally use one synthesis tool, and then produce a final grounded answer. That policy gave much more reliable traces than letting the planner loop freely.
+
+## Evaluation Setup
+
+The exact commands used for the measured runs were:
 
 ```bash
 export OPENROUTER_API_KEY="your_openrouter_key"
@@ -106,29 +111,28 @@ python rag_pipeline.py --evaluate --export-json rag_eval_results.json
 python agent_controller.py --evaluate --trace-dir agent_traces
 ```
 
-This satisfies the README requirement to document the exact serving/inference path used for the final evaluated runs.
-
 ## Runtime Environment
 
 - Operating system: macOS
-- Architecture: arm64 / Apple Silicon
+- Architecture: Apple Silicon / arm64
 - Python version: `3.12.12`
-- Embedding stack: `sentence-transformers` with `all-MiniLM-L6-v2`
-- Retrieval index: `FAISS IndexFlatL2`
-- LLM inference path: OpenRouter-hosted `meta-llama/llama-3.1-8b-instruct`
+- Embedding model: `sentence-transformers/all-MiniLM-L6-v2`
+- Vector index: `FAISS IndexFlatL2`
+- Inference path: OpenRouter with `meta-llama/llama-3.1-8b-instruct`
 
-## Submission Status
+## Observed Performance
 
-The repository currently contains the required code, reports, diagram, requirements file, README, RAG evaluation JSON, and 10 agent trace files.
+From the measured evaluation runs:
 
-Two submission items still depend on how you package the final repository:
-
-- Repository naming: the course asks for `ids568-milestone6-[your_netid]`
-- Git tagging and push: the current working directory is not a git repository, so `git tag submission && git push --tags` still has to be done after you create or connect the final repo
+- Average retrieval latency: `77.5 ms`
+- Average RAG generation latency: `12202.6 ms`
+- Average RAG end-to-end latency: `12280.2 ms`
+- Agent success rate on 10 tasks: `1.00`
+- Average agent task duration: `6698.6 ms`
 
 ## Known Limitations
 
-- Final graded runs still require a real 7B-14B instruct model to be configured on OpenRouter.
-- The included corpus is small and intended as a milestone-sized demonstration corpus.
-- Retrieval precision is modest because the evaluation uses only 8 short documents and top-3 retrieval.
-- The corpus is synthetic course-focused material rather than a larger external document collection.
+- The corpus is small and synthetic, so retrieval precision is limited.
+- Top-3 retrieval often includes extra context even when recall is good.
+- API-based inference introduced some latency variance, including one major outlier in the RAG run.
+- This project is designed to meet the milestone requirements, not to serve as a production-scale RAG system.
