@@ -1,0 +1,57 @@
+{
+  "task_id": "task_02",
+  "task": "Find the guidance on chunk overlap and extract the key design decisions as bullets.",
+  "status": "success",
+  "total_duration_ms": 5265.52,
+  "step_count": 2,
+  "final_answer": "Based on the provided evidence, here are the key design decisions for chunk overlap:\n\n* **Chunk size:** A practical starting point for text-heavy documents is 350 to 700 words or a few hundred characters with overlap.\n* **Overlap:** Overlap helps preserve meaning at chunk boundaries, and a few hundred characters with overlap is a suggested starting point.\n* **Rationale for chunk size and overlap:** Smaller chunks improve precision, but may lose context, while larger chunks preserve more context, but can dilute relevance and consume prompt budget.\n* **Recursive splitting strategy:** Prefer paragraph boundaries first, then sentence boundaries, and only fall back to fixed-size slicing when necessary.\n\nNote that the evidence is limited to a specific context (text-heavy documents) and does not provide a general guideline for all types of documents or applications. Additionally, the evidence does not provide a clear rationale for the specific chunk size and overlap values, but rather suggests a starting point based on practical experience.\n\nIt is also worth noting that the evidence does not provide any information on how to determine the optimal chunk size and overlap for a specific document or application, which may require additional analysis and experimentation.\n\nReferences:\n[source: chunking_strategy.md]\n[source: faiss_notes.md]",
+  "steps": [
+    {
+      "step_number": 1,
+      "thought": "First, we need to search the vector store for supporting evidence on chunk overlap to gather relevant information.",
+      "action": "retrieve",
+      "action_input": "search for guidance on chunk overlap",
+      "observation": {
+        "success": true,
+        "duration_ms": 71.65,
+        "output": {
+          "retrieval_latency_ms": 71.63,
+          "sources": [
+            "chunking_strategy.md",
+            "chunking_strategy.md",
+            "faiss_notes.md"
+          ],
+          "context": "[source: chunking_strategy.md] Chunking controls retrieval granularity. Smaller chunks improve precision because they contain less noise, but they may lose context. Larger chunks preserve more context, but can dilute relevance and consume prompt budget. A practical starting point for text-heavy documents is 350 to 700 words or a few hundred characters with overlap. Overlap helps preserve meaning at chunk boundaries. Recursive splitting usually prefers paragraph boundaries first, then sentence boundaries, and only falls back to fixed-size slicing when necessary.\n\n[source: chunking_strategy.md] prefers paragraph boundaries first, then sentence boundaries, and only falls back to fixed-size slicing when necessary. Design decisions should explain chunk size, overlap, and the rationale for those values based on document structure and context-window constraints.\n\n[source: faiss_notes.md] FAISS is an open-source similarity search library for dense vectors. IndexFlatL2\nperforms exact nearest-neighbor search using Euclidean distance and works well for\nsmall to moderate datasets because it is simple, deterministic, and easy to debug.\nFAISS expects float32 embeddings. For small milestone-scale corpora, exact search is\nusually acceptable and makes evaluation easier because retrieval results are stable.\nApproximate indexes become more attractive only when the corpus grows substantially."
+        },
+        "error": null
+      },
+      "duration_ms": 71.65304099908099
+    },
+    {
+      "step_number": 2,
+      "thought": "The retrieved guidance mentions chunk overlap as a design decision, but it's not clear what the key design decisions are. We need to extract the key design decisions as bullets.",
+      "action": "extract_evidence",
+      "action_input": "extract key design decisions as bullets from the retrieved guidance",
+      "observation": {
+        "success": true,
+        "duration_ms": 0.04,
+        "output": {
+          "instruction": "extract key design decisions as bullets from the retrieved guidance",
+          "facts": [
+            "performs exact nearest-neighbor search using Euclidean distance and works well for",
+            "small to moderate datasets because it is simple, deterministic, and easy to debug.",
+            "FAISS expects float32 embeddings. For small milestone-scale corpora, exact search is",
+            "usually acceptable and makes evaluation easier because retrieval results are stable.",
+            "Approximate indexes become more attractive only when the corpus grows substantially."
+          ],
+          "sources": [
+            "chunking_strategy.md",
+            "faiss_notes.md"
+          ]
+        },
+        "error": null
+      },
+      "duration_ms": 0.04233297659084201
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "task_id": "task_04",
+  "task": "Gather the latency measurement guidance, then summarize what should be reported separately.",
+  "status": "success",
+  "total_duration_ms": 13629.44,
+  "step_count": 2,
+  "final_answer": "Based on the provided evidence, here is the final answer:\n\n**Latency Measurement Guidance:**\n\nTo accurately measure latency, the following stages should be measured separately:\n\n1. **Retrieval Latency**: This includes query embedding and vector search.\n2. **Generation Latency**: This covers the model response time after prompt construction.\n3. **End-to-End Latency**: This includes retrieval, prompt construction, generation, and any post-processing.\n\n**What to Report Separately:**\n\nTo provide a clear understanding of performance bottlenecks, the following should be reported separately:\n\n1. **Stage-level measurements**: This includes reporting latency measurements for each of the above stages (retrieval, generation, and end-to-end).\n2. **Observable traces**: This includes reporting the tool input, output, and reason for moving to the next step, which makes failure analysis possible and satisfies milestone transparency requirements.\n\n**Weakness of Evidence:**\n\nThe evidence provided does not specify the exact metrics or tools to use for measuring latency or observable traces. However, it does provide a clear guidance on what to measure and report separately.\n\n**Sources:**\n\n[source: latency_measurements.md]\n[source: agent_policy.md]\n[source: rag_architecture.md]",
+  "steps": [
+    {
+      "step_number": 1,
+      "thought": "First, we need to gather the latency measurement guidance to proceed with the task.",
+      "action": "retrieve",
+      "action_input": "guidance on latency measurement",
+      "observation": {
+        "success": true,
+        "duration_ms": 83.65,
+        "output": {
+          "retrieval_latency_ms": 83.6,
+          "sources": [
+            "latency_measurements.md",
+            "agent_policy.md",
+            "rag_architecture.md"
+          ],
+          "context": "[source: latency_measurements.md] RAG latency should be measured at multiple stages. Retrieval latency covers query\nembedding plus vector search. Generation latency covers the model response time after\nprompt construction. End-to-end latency includes retrieval, prompt construction,\ngeneration, and any post-processing.\nReporting only total runtime hides bottlenecks. Stage-level measurements help explain\nwhether slow performance comes from embedding, vector lookup, or model inference.\n\n[source: agent_policy.md] ol, the tool input, the output, and the reason the agent moves to the next step. Observable traces make failure analysis possible and satisfy milestone transparency requirements.\n\n[source: rag_architecture.md] n, and grounded answer generation. This architecture reduces hallucination because the model is constrained to reference retrieved evidence instead of relying only on pretraining. Production RAG systems benefit from source attribution, clear no-answer behavior, and instrumentation that separates retrieval latency from generation latency."
+        },
+        "error": null
+      },
+      "duration_ms": 83.64599995547906
+    },
+    {
+      "step_number": 2,
+      "thought": "We need to summarize the guidance on what should be reported separately.",
+      "action": "summarize_context",
+      "action_input": "the retrieved guidance on latency measurement",
+      "observation": {
+        "success": true,
+        "duration_ms": 0.02,
+        "output": {
+          "instruction": "the retrieved guidance on latency measurement",
+          "summary": "[source: latency_measurements.md] RAG latency should be measured at multiple stages. Retrieval latency covers query embedding plus vector search. Generation latency covers the model response time after prompt construction. End-to-end latency includes retrieval, prompt construction, generation, and any post-processing.",
+          "source_count": 3
+        },
+        "error": null
+      },
+      "duration_ms": 0.020292005501687527
+    }
+  ]
+}

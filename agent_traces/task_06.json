@@ -1,0 +1,31 @@
+{
+  "task_id": "task_06",
+  "task": "Retrieve when an agent should use retrieval versus summarization, then explain the policy.",
+  "status": "success",
+  "total_duration_ms": 6152.78,
+  "step_count": 1,
+  "final_answer": "Based on the provided evidence, the policy for when an agent should use retrieval versus summarization is as follows:\n\n**Retrieval:**\n\n* Use retrieval when a task depends on external facts. [source: agent_policy.md]\n\nThis suggests that retrieval is the preferred method when the agent needs to access information that is not already present in its internal knowledge base.\n\n**Summarization:**\n\n* Use summarization when enough evidence has already been collected and the user needs a concise synthesis. [source: agent_policy.md]\n\nThis indicates that summarization is the preferred method when the agent has already gathered sufficient information and needs to condense it into a more digestible form.\n\n**Extraction:**\n\n* Use extraction when the task requests a structured list of entities, metrics, or decisions from available evidence. [source: agent_policy.md]\n\nThis suggests that extraction is the preferred method when the task requires a specific, structured output from the available evidence.\n\nIt's worth noting that the evidence does not provide a clear policy for when to use retrieval versus summarization in situations where both methods could be applicable. However, based on the provided information, it appears that retrieval is preferred when external facts are required, and summarization is preferred when a concise synthesis is needed.\n\nThe evidence also suggests that retrieval-augmented generation (RAG) architecture [source: rag_architecture.md] can be used to combine retrieval with generative inference, which can help reduce hallucination by constraining the model to reference external knowledge. However, this is not directly related to the policy for when to use retrieval versus summarization.\n\nOverall, the evidence provides a clear policy for when to use retrieval, summarization, and extraction, but leaves some ambiguity in situations where both retrieval and summarization could be applicable.",
+  "steps": [
+    {
+      "step_number": 1,
+      "thought": "The first step is to gather evidence from the vector store to inform the decision on when to use retrieval versus summarization.",
+      "action": "retrieve",
+      "action_input": "query on retrieval vs summarization policy",
+      "observation": {
+        "success": true,
+        "duration_ms": 76.12,
+        "output": {
+          "retrieval_latency_ms": 76.09,
+          "sources": [
+            "agent_policy.md",
+            "rag_architecture.md",
+            "embedding_models.md"
+          ],
+          "context": "[source: agent_policy.md] A multi-tool agent should choose retrieval when a task depends on external facts. It should choose summarization when enough evidence has already been collected and the user needs a concise synthesis. It should choose extraction when the task requests a structured list of entities, metrics, or decisions from available evidence. Good agent traces log the decision, the chosen tool, the tool input, the output, and the reason the agent moves to the next step. Observable traces make failure analysis\n\n[source: rag_architecture.md] Retrieval-augmented generation combines retrieval with generative inference. Instead of answering only from parametric memory, the system first searches an external knowledge base, retrieves the most relevant chunks, and then asks the language model to answer using those chunks as grounding context. A typical pipeline includes ingestion, chunking, embedding generation, vector indexing, retrieval, prompt construction, and grounded answer generation. This architecture reduces hallucination because the model is constrained to reference\n\n[source: embedding_models.md] Embedding models convert text into dense vectors that capture semantic similarity.\nSentence-transformer models such as all-MiniLM-L6-v2 are common starting points for\ncoursework because they are lightweight, open-source, and fast enough for local use.\nEmbeddings support semantic retrieval, meaning a query about hallucination control\ncan still match chunks describing grounding even if the wording differs. Good\nembedding choices balance latency, vector dimension, and retrieval quality."
+        },
+        "error": null
+      },
+      "duration_ms": 76.11854199785739
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "task_id": "task_05",
+  "task": "Find how grounding failures differ from retrieval failures and list the distinction clearly.",
+  "status": "success",
+  "total_duration_ms": 6702.11,
+  "step_count": 2,
+  "final_answer": "Grounding failures differ from retrieval failures in the following ways:\n\n**Grounding failures:**\n\n* Occur when the model generates facts or claims that are not supported by the retrieved context, even if the correct evidence is present.\n* Can also occur when the model ignores citations or fails to mention uncertainty when the evidence is incomplete.\n* Typically involve a failure of the model to properly synthesize the retrieved information into a coherent and accurate answer.\n\n**Retrieval failures:**\n\n* Occur when the model fails to retrieve the correct evidence or context, even if the correct information is available.\n* Can be caused by poor chunk boundaries, ambiguous queries, retrieving tangential context, or other retrieval-related issues.\n* Typically involve a failure of the model to retrieve the necessary information to answer the question accurately.\n\nIn other words, grounding failures are related to the model's ability to synthesize and use the retrieved information, while retrieval failures are related to the model's ability to retrieve the correct information in the first place.",
+  "steps": [
+    {
+      "step_number": 1,
+      "thought": "First, we need to understand the definitions of grounding failures and retrieval failures to identify their differences.",
+      "action": "retrieve",
+      "action_input": "definitions of grounding failures and retrieval failures",
+      "observation": {
+        "success": true,
+        "duration_ms": 95.19,
+        "output": {
+          "retrieval_latency_ms": 95.07,
+          "sources": [
+            "grounding_practices.md",
+            "failure_analysis.md",
+            "agent_policy.md"
+          ],
+          "context": "[source: grounding_practices.md] Grounded generation means the language model must answer only from retrieved context.\nGood prompts explicitly instruct the model to refuse unsupported claims, cite sources,\nand mention uncertainty when the evidence is incomplete.\nGrounding analysis should separate retrieval failures from generation failures. If the\ncorrect evidence is absent from retrieved chunks, the error belongs to retrieval. If\nthe evidence is present but the model still invents facts or ignores citations, the\nerror belongs to generation or instruction-following.\n\n[source: failure_analysis.md] Common failure modes include poor chunk boundaries, ambiguous queries, retrieving\ntangential context, over-confident generation, and agents using the wrong tool too\nearly. Another failure mode is stopping after retrieval without synthesizing a final\nanswer that actually addresses the user task.\nEvaluation should document at least a few negative cases, including out-of-scope\nquestions and ambiguous requests, because those reveal whether the system behaves\nsafely when evidence is weak or missing.\n\n[source: agent_policy.md] ol, the tool input, the output, and the reason the agent moves to the next step. Observable traces make failure analysis possible and satisfy milestone transparency requirements."
+        },
+        "error": null
+      },
+      "duration_ms": 95.18670802935958
+    },
+    {
+      "step_number": 2,
+      "thought": "Determine the definitions of grounding failures and retrieval failures to understand the distinction between them.",
+      "action": "extract_evidence",
+      "action_input": "definitions of grounding failures and retrieval failures",
+      "observation": {
+        "success": true,
+        "duration_ms": 0.01,
+        "output": {
+          "instruction": "definitions of grounding failures and retrieval failures",
+          "facts": [
+            "Good prompts explicitly instruct the model to refuse unsupported claims, cite sources,",
+            "and mention uncertainty when the evidence is incomplete.",
+            "Grounding analysis should separate retrieval failures from generation failures. If the",
+            "correct evidence is absent from retrieved chunks, the error belongs to retrieval. If",
+            "the evidence is present but the model still invents facts or ignores citations, the"
+          ],
+          "sources": [
+            "grounding_practices.md",
+            "failure_analysis.md",
+            "agent_policy.md"
+          ]
+        },
+        "error": null
+      },
+      "duration_ms": 0.00866700429469347
+    }
+  ]
+}

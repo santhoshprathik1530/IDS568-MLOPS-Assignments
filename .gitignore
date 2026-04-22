@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+
+# Local scratch outputs
+agent_traces_v2/

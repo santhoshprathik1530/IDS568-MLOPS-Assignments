@@ -1,0 +1,196 @@
+[
+  {
+    "query_id": "q1",
+    "question": "What is retrieval-augmented generation and how does it reduce hallucination?",
+    "retrieved_sources": [
+      "rag_architecture.md",
+      "rag_architecture.md",
+      "latency_measurements.md"
+    ],
+    "relevant_sources": [
+      "rag_architecture.md",
+      "grounding_practices.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 0.5,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 49.82204199768603,
+    "generation_latency_ms": 2273.978624958545,
+    "end_to_end_latency_ms": 2323.9089170238003,
+    "answer_excerpt": "Retrieval-augmented generation (RAG) is a system that combines retrieval with generative inference. It first searches an external knowledge base, retrieves the most relevant chunks, and then asks the language model to answer using those chu"
+  },
+  {
+    "query_id": "q2",
+    "question": "Why does chunk overlap matter when building a retriever?",
+    "retrieved_sources": [
+      "chunking_strategy.md",
+      "chunking_strategy.md",
+      "latency_measurements.md"
+    ],
+    "relevant_sources": [
+      "chunking_strategy.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 1.0,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 81.56608400167897,
+    "generation_latency_ms": 690.022416994907,
+    "end_to_end_latency_ms": 771.6863749665208,
+    "answer_excerpt": "Chunk overlap matters when building a retriever because it helps preserve meaning at chunk boundaries. This is crucial for maintaining context, especially in text-heavy documents. A practical starting point for chunk overlap is a few hundre"
+  },
+  {
+    "query_id": "q3",
+    "question": "Why is FAISS IndexFlatL2 a reasonable choice for a small course project corpus?",
+    "retrieved_sources": [
+      "faiss_notes.md",
+      "embedding_models.md",
+      "chunking_strategy.md"
+    ],
+    "relevant_sources": [
+      "faiss_notes.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 1.0,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 54.50875003589317,
+    "generation_latency_ms": 19371.604416985065,
+    "end_to_end_latency_ms": 19426.198125001974,
+    "answer_excerpt": "FAISS IndexFlatL2 is a reasonable choice for a small course project corpus because it performs exact nearest-neighbor search using Euclidean distance, which is acceptable for small datasets [source: faiss_notes.md]. Additionally, it is simp"
+  },
+  {
+    "query_id": "q4",
+    "question": "How should retrieval latency, generation latency, and end-to-end latency be measured?",
+    "retrieved_sources": [
+      "latency_measurements.md",
+      "rag_architecture.md",
+      "failure_analysis.md"
+    ],
+    "relevant_sources": [
+      "latency_measurements.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 1.0,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 128.22608300484717,
+    "generation_latency_ms": 9298.683291999623,
+    "end_to_end_latency_ms": 9427.017458016053,
+    "answer_excerpt": "According to the provided context, retrieval latency, generation latency, and end-to-end latency should be measured at multiple stages to identify bottlenecks. Specifically:\n\n* Retrieval latency should cover query embedding plus vector sear"
+  },
+  {
+    "query_id": "q5",
+    "question": "What makes an answer grounded instead of hallucinatory?",
+    "retrieved_sources": [
+      "rag_architecture.md",
+      "grounding_practices.md",
+      "rag_architecture.md"
+    ],
+    "relevant_sources": [
+      "grounding_practices.md",
+      "rag_architecture.md"
+    ],
+    "precision_at_k": 0.6666666666666666,
+    "recall_at_k": 1.0,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 69.7675000410527,
+    "generation_latency_ms": 3228.221917001065,
+    "end_to_end_latency_ms": 3298.1437499984168,
+    "answer_excerpt": "An answer is grounded instead of hallucinatory when it is generated from retrieved context, rather than relying solely on pretraining [source: rag_architecture.md]. This is achieved through retrieval-augmented generation, which combines ret"
+  },
+  {
+    "query_id": "q6",
+    "question": "How do sentence-transformer embeddings help semantic retrieval?",
+    "retrieved_sources": [
+      "embedding_models.md",
+      "rag_architecture.md",
+      "latency_measurements.md"
+    ],
+    "relevant_sources": [
+      "embedding_models.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 1.0,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 78.47550004953519,
+    "generation_latency_ms": 370.35266699967906,
+    "end_to_end_latency_ms": 448.91274999827147,
+    "answer_excerpt": "Sentence-transformer embeddings, such as all-MiniLM-L6-v2, support semantic retrieval by capturing semantic similarity between text inputs. This is because they convert text into dense vectors that capture the underlying meaning and context"
+  },
+  {
+    "query_id": "q7",
+    "question": "When should an agent retrieve versus summarize information?",
+    "retrieved_sources": [
+      "agent_policy.md",
+      "failure_analysis.md",
+      "agent_policy.md"
+    ],
+    "relevant_sources": [
+      "agent_policy.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 1.0,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 24.39795801183209,
+    "generation_latency_ms": 82371.89225002658,
+    "end_to_end_latency_ms": 82396.43320802134,
+    "answer_excerpt": "According to the Agent Tool-Use Policy [source: agent_policy.md], an agent should choose retrieval when a task depends on external facts. This is because retrieval is the most suitable tool for gathering new information from external source"
+  },
+  {
+    "query_id": "q8",
+    "question": "What failure cases should be documented during RAG evaluation?",
+    "retrieved_sources": [
+      "failure_analysis.md",
+      "agent_policy.md",
+      "rag_architecture.md"
+    ],
+    "relevant_sources": [
+      "failure_analysis.md",
+      "grounding_practices.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 0.5,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 187.08375003188848,
+    "generation_latency_ms": 2016.585249977652,
+    "end_to_end_latency_ms": 2203.834541956894,
+    "answer_excerpt": "According to the provided context, the following failure cases should be documented during RAG evaluation:\n\n* Out-of-scope questions [source: failure_analysis.md]\n* Ambiguous requests [source: failure_analysis.md]\n* Stopping after retrieval"
+  },
+  {
+    "query_id": "q9",
+    "question": "What design decisions should be justified for chunking and indexing?",
+    "retrieved_sources": [
+      "chunking_strategy.md",
+      "chunking_strategy.md",
+      "failure_analysis.md"
+    ],
+    "relevant_sources": [
+      "chunking_strategy.md",
+      "faiss_notes.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 0.5,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 77.82933302223682,
+    "generation_latency_ms": 587.5187909696251,
+    "end_to_end_latency_ms": 665.4464169987477,
+    "answer_excerpt": "Based on the provided context, the following design decisions should be justified for chunking and indexing:\n\n1. **Chunk size**: A practical starting point for text-heavy documents is 350 to 700 words or a few hundred characters with overla"
+  },
+  {
+    "query_id": "q10",
+    "question": "What should agent traces record to make decision-making observable?",
+    "retrieved_sources": [
+      "agent_policy.md",
+      "agent_policy.md",
+      "failure_analysis.md"
+    ],
+    "relevant_sources": [
+      "agent_policy.md"
+    ],
+    "precision_at_k": 0.3333333333333333,
+    "recall_at_k": 1.0,
+    "hit_rate": 1.0,
+    "retrieval_latency_ms": 23.460750002413988,
+    "generation_latency_ms": 1816.9362500193529,
+    "end_to_end_latency_ms": 1840.5334999551997,
+    "answer_excerpt": "According to the provided context, agent traces should record the following to make decision-making observable:\n\n* The decision\n* The chosen tool\n* The tool input\n* The output\n* The reason the agent moves to the next step\n\nThis is explicitl"
+  }
+]
