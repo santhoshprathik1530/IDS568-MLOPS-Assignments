@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+logs/*.log
+logs/*.tmp
+logs/.mplconfig/
+visualizations/*.tmp
+screenshots/*.tmp

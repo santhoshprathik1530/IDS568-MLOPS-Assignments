@@ -1,0 +1,14 @@
+flowchart LR
+    A["Course Knowledge Documents"] --> B["Chunking"]
+    B --> C["Embeddings: all-MiniLM-L6-v2"]
+    C --> D["FAISS IndexFlatL2"]
+    D --> E["RAG Retrieval"]
+    E --> F["Prompt Builder"]
+    F --> G["Llama 3.1 8B Instruct via OpenRouter"]
+    G --> H["Answer / Agent Output"]
+    H --> I["Monitoring Metrics"]
+    H --> J["A/B Test Evaluation"]
+    H --> K["Governance Packet"]
+    I --> L["Audit Trail"]
+    J --> L
+    K --> L

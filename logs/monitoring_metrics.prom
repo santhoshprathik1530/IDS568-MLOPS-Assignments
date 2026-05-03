@@ -1,0 +1,123 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 8974.0
+python_gc_objects_collected_total{generation="1"} 1074.0
+python_gc_objects_collected_total{generation="2"} 70.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 966.0
+python_gc_collections_total{generation="1"} 87.0
+python_gc_collections_total{generation="2"} 6.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="12",patchlevel="12",version="3.12.12"} 1.0
+# HELP ids568_requests_total Total number of requests served by endpoint and status.
+# TYPE ids568_requests_total counter
+ids568_requests_total{endpoint="answer",status="ok"} 19.0
+ids568_requests_total{endpoint="agent",status="ok"} 5.0
+# HELP ids568_requests_created Total number of requests served by endpoint and status.
+# TYPE ids568_requests_created gauge
+ids568_requests_created{endpoint="answer",status="ok"} 1.777497610966911e+09
+ids568_requests_created{endpoint="agent",status="ok"} 1.777497620575996e+09
+# HELP ids568_request_latency_ms End-to-end request latency in milliseconds.
+# TYPE ids568_request_latency_ms histogram
+ids568_request_latency_ms_bucket{endpoint="answer",le="25.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="50.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="100.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="250.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="500.0"} 1.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="1000.0"} 1.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="2500.0"} 13.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="5000.0"} 18.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="10000.0"} 19.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="30000.0"} 19.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="90000.0"} 19.0
+ids568_request_latency_ms_bucket{endpoint="answer",le="+Inf"} 19.0
+ids568_request_latency_ms_count{endpoint="answer"} 19.0
+ids568_request_latency_ms_sum{endpoint="answer"} 47051.53099900144
+ids568_request_latency_ms_bucket{endpoint="agent",le="25.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="50.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="100.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="250.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="500.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="1000.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="2500.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="5000.0"} 0.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="10000.0"} 3.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="30000.0"} 5.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="90000.0"} 5.0
+ids568_request_latency_ms_bucket{endpoint="agent",le="+Inf"} 5.0
+ids568_request_latency_ms_count{endpoint="agent"} 5.0
+ids568_request_latency_ms_sum{endpoint="agent"} 54494.83074999989
+# HELP ids568_request_latency_ms_created End-to-end request latency in milliseconds.
+# TYPE ids568_request_latency_ms_created gauge
+ids568_request_latency_ms_created{endpoint="answer"} 1.777497610966948e+09
+ids568_request_latency_ms_created{endpoint="agent"} 1.777497620576056e+09
+# HELP ids568_retrieval_latency_ms Latency of retrieval operations in milliseconds.
+# TYPE ids568_retrieval_latency_ms histogram
+ids568_retrieval_latency_ms_bucket{le="5.0"} 0.0
+ids568_retrieval_latency_ms_bucket{le="10.0"} 0.0
+ids568_retrieval_latency_ms_bucket{le="25.0"} 1.0
+ids568_retrieval_latency_ms_bucket{le="50.0"} 9.0
+ids568_retrieval_latency_ms_bucket{le="100.0"} 19.0
+ids568_retrieval_latency_ms_bucket{le="250.0"} 19.0
+ids568_retrieval_latency_ms_bucket{le="500.0"} 19.0
+ids568_retrieval_latency_ms_bucket{le="1000.0"} 19.0
+ids568_retrieval_latency_ms_bucket{le="+Inf"} 19.0
+ids568_retrieval_latency_ms_count 19.0
+ids568_retrieval_latency_ms_sum 1064.4671660015774
+# HELP ids568_retrieval_latency_ms_created Latency of retrieval operations in milliseconds.
+# TYPE ids568_retrieval_latency_ms_created gauge
+ids568_retrieval_latency_ms_created 1.7774976014004962e+09
+# HELP ids568_generation_latency_ms Latency of generation operations in milliseconds.
+# TYPE ids568_generation_latency_ms histogram
+ids568_generation_latency_ms_bucket{le="100.0"} 0.0
+ids568_generation_latency_ms_bucket{le="250.0"} 0.0
+ids568_generation_latency_ms_bucket{le="500.0"} 1.0
+ids568_generation_latency_ms_bucket{le="1000.0"} 1.0
+ids568_generation_latency_ms_bucket{le="2500.0"} 13.0
+ids568_generation_latency_ms_bucket{le="5000.0"} 19.0
+ids568_generation_latency_ms_bucket{le="10000.0"} 19.0
+ids568_generation_latency_ms_bucket{le="30000.0"} 19.0
+ids568_generation_latency_ms_bucket{le="90000.0"} 19.0
+ids568_generation_latency_ms_bucket{le="+Inf"} 19.0
+ids568_generation_latency_ms_count 19.0
+ids568_generation_latency_ms_sum 45980.65841799916
+# HELP ids568_generation_latency_ms_created Latency of generation operations in milliseconds.
+# TYPE ids568_generation_latency_ms_created gauge
+ids568_generation_latency_ms_created 1.777497601400519e+09
+# HELP ids568_agent_step_count Number of tool-selection steps taken by the agent.
+# TYPE ids568_agent_step_count histogram
+ids568_agent_step_count_bucket{le="1.0"} 1.0
+ids568_agent_step_count_bucket{le="2.0"} 5.0
+ids568_agent_step_count_bucket{le="3.0"} 5.0
+ids568_agent_step_count_bucket{le="4.0"} 5.0
+ids568_agent_step_count_bucket{le="5.0"} 5.0
+ids568_agent_step_count_bucket{le="6.0"} 5.0
+ids568_agent_step_count_bucket{le="+Inf"} 5.0
+ids568_agent_step_count_count 5.0
+ids568_agent_step_count_sum 9.0
+# HELP ids568_agent_step_count_created Number of tool-selection steps taken by the agent.
+# TYPE ids568_agent_step_count_created gauge
+ids568_agent_step_count_created 1.7774976014005299e+09
+# HELP ids568_errors_total Total number of failed requests by endpoint.
+# TYPE ids568_errors_total counter
+# HELP ids568_input_integrity_anomalies_total Count of input integrity anomalies.
+# TYPE ids568_input_integrity_anomalies_total counter
+ids568_input_integrity_anomalies_total{kind="multi_question"} 1.0
+# HELP ids568_input_integrity_anomalies_created Count of input integrity anomalies.
+# TYPE ids568_input_integrity_anomalies_created gauge
+ids568_input_integrity_anomalies_created{kind="multi_question"} 1.777497688838364e+09
+# HELP ids568_query_drift_score Simple rolling drift score based on query-length deviation from baseline.
+# TYPE ids568_query_drift_score gauge
+ids568_query_drift_score 0.7080801977354829
+# HELP ids568_retrieval_confidence_score Average retrieval similarity score for the latest request.
+# TYPE ids568_retrieval_confidence_score gauge
+ids568_retrieval_confidence_score 0.4457886543389509
+# HELP ids568_low_support_requests_total Requests where retrieval support looked weak.
+# TYPE ids568_low_support_requests_total counter

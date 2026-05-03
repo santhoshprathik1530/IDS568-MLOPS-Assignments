@@ -1,0 +1,61 @@
+{
+  "reference_size": 8,
+  "production_size": 12,
+  "metrics": [
+    {
+      "feature": "token_count",
+      "reference_mean": 7.625,
+      "production_mean": 14.166666666666666,
+      "drift_score": 12.49457278563224,
+      "p_value": 1.5876796062554575e-05
+    },
+    {
+      "feature": "char_count",
+      "reference_mean": 50.125,
+      "production_mean": 83.91666666666667,
+      "drift_score": 12.494572785632238,
+      "p_value": 1.5876796062554575e-05
+    },
+    {
+      "feature": "punctuation_count",
+      "reference_mean": 1.0,
+      "production_mean": 2.1666666666666665,
+      "drift_score": 0.0,
+      "p_value": 0.5953480987536715
+    },
+    {
+      "feature": "multi_question",
+      "reference_mean": 0.0,
+      "production_mean": 0.16666666666666666,
+      "drift_score": 0.0,
+      "p_value": 0.9979677701039928
+    },
+    {
+      "feature": "wh_count",
+      "reference_mean": 1.0,
+      "production_mean": 1.0833333333333333,
+      "drift_score": 0.0,
+      "p_value": 0.32404540763673895
+    },
+    {
+      "feature": "avg_token_length",
+      "reference_mean": 5.660515873015873,
+      "production_mean": 4.9172308696205755,
+      "drift_score": 1.7507123809172445,
+      "p_value": 0.21420973247598632
+    },
+    {
+      "feature": "lexical_diversity",
+      "reference_mean": 1.0,
+      "production_mean": 0.9790353641456583,
+      "drift_score": 0.0,
+      "p_value": 0.5953480987536715
+    }
+  ],
+  "anomalies": {
+    "multi_question_requests": 2,
+    "high_punctuation_requests": 3,
+    "very_long_queries": 1,
+    "low_diversity_queries": 0
+  }
+}

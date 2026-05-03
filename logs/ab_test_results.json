@@ -1,0 +1,61 @@
+{
+  "baseline_name": "A_current_topk3",
+  "variant_name": "B_topk2_citation_focused",
+  "sample_size_per_arm_target": 492,
+  "observed_counts": {
+    "baseline": 1969,
+    "variant": 2031,
+    "total": 4000
+  },
+  "latency": {
+    "baseline_mean_ms": 2561.9001005571754,
+    "variant_mean_ms": 2138.4881751864295,
+    "uplift_ms": 423.41192537074585,
+    "baseline_ci": [
+      2525.007387378071,
+      2598.7928137362796
+    ],
+    "variant_ci": [
+      2112.11854720473,
+      2164.857803168129
+    ],
+    "p_value": 1.1308725744525436e-71
+  },
+  "groundedness": {
+    "baseline_rate": 0.8318943626206196,
+    "variant_rate": 0.8926637124569178,
+    "absolute_lift": 0.060769349836298225,
+    "baseline_ci": [
+      0.8153766288329869,
+      0.8484120964082522
+    ],
+    "variant_ci": [
+      0.8792016886340845,
+      0.906125736279751
+    ],
+    "z_score": 5.583850131605093,
+    "p_value": 2.35251449431928e-08
+  },
+  "task_success": {
+    "baseline_rate": 0.8842051802945657,
+    "variant_rate": 0.931068439192516,
+    "absolute_lift": 0.04686325889795029,
+    "baseline_ci": [
+      0.8700717908566793,
+      0.8983385697324522
+    ],
+    "variant_ci": [
+      0.9200506873036914,
+      0.9420861910813406
+    ],
+    "z_score": 5.126765729672994,
+    "p_value": 2.94761918873121e-07
+  },
+  "error_rate": {
+    "baseline_rate": 0.03605891315388522,
+    "variant_rate": 0.0379123584441162,
+    "absolute_change": 0.0018534452902309803,
+    "z_score": 0.31046567351873716,
+    "p_value": 0.7562068592388231
+  }
+}

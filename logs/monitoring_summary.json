@@ -1,0 +1,14 @@
+{
+  "total_requests": 24,
+  "answer_requests": 19,
+  "agent_requests": 5,
+  "avg_retrieval_latency_ms": 56.02,
+  "avg_generation_latency_ms": 2420.03,
+  "max_generation_latency_ms": 4970.4,
+  "avg_agent_steps": 1.8,
+  "max_drift_score": 1.981,
+  "integrity_counts": {
+    "multi_question": 1
+  },
+  "requests_without_source_citations": 3
+}

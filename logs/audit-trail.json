@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-05-02T16:20:00-05:00",
+    "event_type": "model_version_recorded",
+    "model_version": "meta-llama/llama-3.1-8b-instruct",
+    "component": "generation",
+    "details": "Final project uses the same 8B instruct model path as Milestone 6 through OpenRouter."
+  },
+  {
+    "timestamp": "2026-05-02T16:21:00-05:00",
+    "event_type": "monitoring_run_completed",
+    "model_version": "meta-llama/llama-3.1-8b-instruct",
+    "component": "monitoring",
+    "details": {
+      "total_requests": 24,
+      "avg_retrieval_latency_ms": 56.02,
+      "avg_generation_latency_ms": 2420.03,
+      "max_drift_score": 1.981,
+      "integrity_counts": {
+        "multi_question": 1
+      }
+    }
+  },
+  {
+    "timestamp": "2026-05-02T16:22:00-05:00",
+    "event_type": "monitoring_intervention_note",
+    "component": "monitoring",
+    "approval_status": "proposed",
+    "details": "Recommended alerts include elevated drift score, repeated integrity anomalies, and p95 latency degradation."
+  },
+  {
+    "timestamp": "2026-05-02T17:58:00-05:00",
+    "event_type": "ab_test_evaluated",
+    "component": "ab_test",
+    "details": {
+      "baseline_name": "A_current_topk3",
+      "variant_name": "B_topk2_citation_focused",
+      "ship_recommendation": "B",
+      "latency_uplift_ms": 423.41,
+      "groundedness_lift": 0.0608,
+      "task_success_lift": 0.0469
+    }
+  },
+  {
+    "timestamp": "2026-05-02T18:00:00-05:00",
+    "event_type": "approval_workflow",
+    "component": "governance",
+    "approver_role": "student_owner",
+    "approval_status": "draft-approved-for-submission",
+    "details": "Variant B documented as the preferred future configuration pending live validation."
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "title": "IDS568 Final Project Monitoring",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "panels": [
+    {
+      "title": "Request Volume",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum by (endpoint, status) (rate(ids568_requests_total[1m]))",
+          "legendFormat": "{{endpoint}} - {{status}}"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0}
+    },
+    {
+      "title": "Latency p95",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum by (le, endpoint) (rate(ids568_request_latency_ms_bucket[5m])))",
+          "legendFormat": "{{endpoint}} p95"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0}
+    },
+    {
+      "title": "Generation vs Retrieval Latency",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "rate(ids568_generation_latency_ms_sum[5m]) / rate(ids568_generation_latency_ms_count[5m])",
+          "legendFormat": "generation avg"
+        },
+        {
+          "expr": "rate(ids568_retrieval_latency_ms_sum[5m]) / rate(ids568_retrieval_latency_ms_count[5m])",
+          "legendFormat": "retrieval avg"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8}
+    },
+    {
+      "title": "Integrity and Drift Signals",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "sum by (kind) (rate(ids568_input_integrity_anomalies_total[5m]))",
+          "legendFormat": "{{kind}}"
+        },
+        {
+          "expr": "ids568_query_drift_score",
+          "legendFormat": "drift score"
+        }
+      ],
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8}
+    }
+  ]
+}
