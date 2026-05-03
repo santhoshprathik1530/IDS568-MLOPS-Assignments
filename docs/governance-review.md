@@ -2,97 +2,70 @@
 
 ## System Boundary
 
-The system under review is a small RAG + agent workflow built on top of:
+The system reviewed here is a small RAG plus agent workflow built from a local document corpus, sentence-transformer embeddings, FAISS retrieval, and an instruct LLM accessed through OpenRouter. The agent layer is intentionally narrow and is limited to retrieval followed by at most one synthesis step.
 
-- a local document corpus
-- a sentence-transformer embedding model
-- a FAISS retriever
-- an instruct LLM accessed through OpenRouter
-- two lightweight agent tools: summarization and evidence extraction
-
-The system boundary starts when a user submits a question or task and ends when the final answer is returned. Within that boundary, the system performs integrity checks, retrieval, prompt construction, model inference, optional tool-assisted synthesis, and monitoring.
+For the purposes of this review, the system boundary begins when a user submits a question or task and ends when the final response is returned. Inside that boundary, the system performs integrity checks, retrieval, prompt construction, model inference, optional tool-assisted synthesis, and metric emission.
 
 ## Data Security
 
-The project does not use proprietary or internal enterprise data, which reduces the immediate security risk. However, the inference path still matters because prompts are sent to an external API provider. That means a user could unintentionally transmit sensitive content if the service were used carelessly.
+This project does not use internal enterprise data or real sensitive records, which keeps the immediate security risk fairly low. Even so, the inference boundary still matters because prompts are sent to an external API provider. If a user were to enter private or regulated information, that content would leave the local environment.
 
-In the current project setup, the right mitigation is procedural rather than architectural:
+In the current class setting, the most reasonable mitigation is procedural:
 
-- use only non-sensitive course-style content
-- document the external API dependency clearly
-- avoid real personal or regulated data
+- keep the workload limited to non-sensitive course-style content
+- document the external inference path clearly
+- avoid using the system for real personal or regulated data
 
-If this were moved toward a more serious deployment, the API boundary would need a much stricter review.
+If this design were moved beyond the course setting, the external API boundary would require a more formal privacy and vendor review.
 
 ## Retrieval Risks
 
-There are three main retrieval risks in this system:
+The most important retrieval risks in this project are stale knowledge, partial retrieval, and contaminated context.
 
-1. **stale knowledge**
-   - the corpus is static and manually maintained
-   - if the content stops matching the query distribution, retrieval quality will degrade
+The corpus is static and manually maintained, so stale knowledge is a realistic concern. Even if the software remains unchanged, retrieval quality can decline if the corpus no longer matches the request distribution.
 
-2. **partial retrieval**
-   - with a small corpus and top-k retrieval, the system can return some relevant context without returning all the context needed for a complete answer
-   - this was already visible in the Milestone 6 evaluation
+Partial retrieval is another practical issue. Because the corpus is small and the system uses top-k retrieval, it is possible to retrieve something relevant without retrieving everything needed for a complete answer. That pattern already appeared in the earlier milestone evaluation.
 
-3. **contaminated or low-quality context**
-   - if a document were poorly written or adversarial, the LLM could be grounded in bad evidence rather than good evidence
+The third retrieval risk is low-quality or contaminated context. If a source document were misleading, outdated, or adversarial, the language model could still produce a confident answer grounded in poor evidence.
 
-The monitoring and drift components help with some of this, but not all of it. Monitoring can reveal weaker grounding signals or changing query patterns. It cannot by itself guarantee that the underlying corpus remains correct.
+Monitoring and drift analysis help reveal some of these problems, but they do not solve them automatically. They improve observability; they do not guarantee correctness.
 
 ## Hallucination Risk Points
 
-The main hallucination risk does not come from retrieval being absent; it comes from retrieval being incomplete.
+In this system, the main hallucination risk does not come from answering without retrieval. It comes from answering with retrieval that is incomplete.
 
-This project reduces hallucination risk in three ways:
+The design reduces hallucination risk in three ways:
 
-- it forces retrieval before answering
-- it asks for source-backed grounding
-- it monitors signals such as missing citations and weak-support behavior
+- retrieval is required before answering
+- the prompt encourages grounded output with citations
+- monitoring tracks citation gaps and weak-support signals
 
-Even so, hallucination can still happen when:
-
-- only one of several relevant chunks is retrieved
-- the query contains multiple sub-questions
-- the model summarizes beyond what the evidence cleanly supports
-
-So the main governance position here is that “grounded” does not mean “safe by default.” It means the system is easier to inspect and easier to challenge.
+Even with those controls, hallucination can still appear when only part of the relevant context is retrieved, when the prompt contains multiple sub-questions, or when the model summarizes beyond what the evidence cleanly supports. In other words, grounded output is safer than ungrounded output, but it is not automatically correct.
 
 ## Tool-Misuse Pathways
 
-The agent is intentionally narrow, but tool risk still exists.
+The agent in this project is deliberately constrained, but that does not eliminate tool risk entirely. The main failure modes are:
 
-The key misuse pathways are:
+- selecting a synthesis action too early
+- summarizing incomplete evidence as if it were complete
+- extracting facts from a partially relevant retrieval set
 
-- selecting a synthesis tool before enough evidence is gathered
-- summarizing an incomplete context as if it were complete
-- extracting facts from a retrieval set that is only partially relevant
-
-The current controller mitigates this by constraining the action flow: retrieve first, then at most one synthesis step, then finish. That makes the system less flexible but much easier to reason about and audit.
+The current controller mitigates this by forcing a simple action order: retrieve first, allow at most one synthesis step, and then return a final answer. This makes the agent less flexible, but it also makes the system easier to audit and reason about.
 
 ## Compliance Concerns
 
-The main compliance concerns are:
+The main compliance concerns are tied to data handling and scope. A user could submit content that should not be sent to an external inference provider. A second concern is expectation management: because the system is narrow and course-specific, it would be inappropriate to present it as a general-purpose assistant.
 
-- accidental submission of sensitive prompts to an external inference provider
-- unclear user expectations around the limits of the corpus
-- reuse of this course project beyond the low-risk context it was designed for
-
-This project is acceptable within the class setting because:
+Within the class setting, the setup is acceptable because:
 
 - the corpus is synthetic and non-sensitive
 - the model path is documented
-- the API exception was explicitly approved
+- API-based inference was explicitly approved
 
-Outside that setting, the same design would require stronger controls around privacy, retention, access policy, and vendor review.
+Outside the class setting, the same design would need stronger controls around privacy, retention, access policy, and vendor governance.
 
 ## Overall Governance Assessment
 
-This system is governance-aware but still lightweight. Its strongest property is not that it eliminates risk, but that it makes risk more observable:
+My overall assessment is that the system is governance-aware but intentionally lightweight. Its strength is not that it removes risk altogether. Its strength is that it makes key risks visible through monitoring, documentation, and constrained workflow design.
 
-- monitoring surfaces latency, anomalies, and drift
-- the audit trail records system events
-- the model card and risk register document the boundaries clearly
-
-The main remaining weakness is that correctness still depends heavily on corpus quality and query complexity. That is why the drift and retrieval-risk story is central to this project.
+The main remaining weakness is that response quality still depends heavily on corpus quality and on the complexity of incoming queries. That is why the retrieval-risk and drift stories are central to this project.

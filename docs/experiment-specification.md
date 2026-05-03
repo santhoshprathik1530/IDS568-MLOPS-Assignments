@@ -2,111 +2,102 @@
 
 ## Objective
 
-For this component, I designed an A/B test around a realistic product question for the final-project system: should I keep the current RAG + agent workflow as it is, or move to a slightly tighter and more citation-focused variant?
+For the A/B test component, I framed the experiment around a practical decision for this system: whether to keep the current RAG workflow unchanged or move to a slightly tighter retrieval configuration with more explicit citation-oriented output formatting.
 
 The two arms are:
 
-- **Variant A:** current system
+- **Variant A**
+  - current configuration
   - top-k retrieval of 3
   - current answer format
-- **Variant B:** proposed variant
+- **Variant B**
+  - proposed configuration
   - top-k retrieval of 2
-  - more citation-focused answer formatting
+  - stronger citation-oriented answer formatting
 
-The basic idea behind Variant B is that a slightly smaller retrieval context may reduce latency, and a more explicit citation style may improve groundedness.
+The motivation for Variant B is straightforward. A smaller retrieval set may reduce latency, and the stricter answer format may improve groundedness by pushing the model to stay closer to the retrieved evidence.
 
 ## Hypothesis
 
-Primary hypothesis:
+My primary hypothesis is that Variant B will reduce response latency while maintaining or improving groundedness.
 
-> Variant B will reduce average response latency while maintaining or improving answer groundedness.
-
-Secondary hypothesis:
-
-> Variant B will improve overall task success without materially increasing the error rate.
+My secondary hypothesis is that Variant B will improve overall task success without creating a meaningful increase in the error rate.
 
 ## Success Metrics
 
-Primary metrics:
+The primary metrics are:
 
-- average end-user latency
+- average end-to-end latency
 - groundedness rate
 
-Secondary metrics:
+The secondary metrics are:
 
 - task success rate
 - error rate
 
-The guardrail metric is error rate. Even if Variant B is faster, I would not recommend it if failures increase noticeably.
+I treated error rate as a guardrail metric. A faster model behavior would not be enough to justify deployment if it came with a noticeable increase in failures.
 
 ## Randomization Method
 
-Requests are assigned to A or B with a deterministic 50/50 split based on a hash of the request ID. I used deterministic assignment because it is easy to reproduce and keeps the simulation logic simple and auditable.
+Requests are assigned to Variant A or Variant B with a deterministic 50/50 split based on a hash of the request ID. I used deterministic assignment because it is easy to reproduce, easy to audit, and sufficient for an offline simulation setting.
 
 ## Sample Size and Duration
 
-I based the sample-size calculation on groundedness, using a baseline rate of `0.84` and a target improvement to `0.90`, with:
+I based the sample-size calculation on groundedness. Using a baseline groundedness of `0.84`, a target improvement to `0.90`, a significance level of `0.05`, and power of `0.80`, the script estimates:
 
-- significance level: `0.05`
-- power: `0.80`
+- required sample size: `492` requests per arm
 
-The script calculates an approximate required sample size of:
+For the actual simulation, I used `4000` total synthetic requests:
 
-- **492 requests per arm**
+- Variant A: `1969`
+- Variant B: `2031`
 
-For the actual simulation run, I used a much larger total of `4000` requests:
-
-- baseline: `1969`
-- variant: `2031`
-
-That gives more than enough synthetic data to test the decision logic and confidence intervals.
-
-If this were converted to a live rollout and the service received about 300 eligible requests per hour, a 984-request total minimum would correspond to roughly 3.3 hours of traffic. In practice, I would run longer to cover day-part effects and watch the guardrail metrics.
+This comfortably exceeds the minimum and gives stable rate estimates. If I were running the same design with live traffic at roughly 300 eligible requests per hour, the minimum total sample would be reachable in a little over three hours, although in practice I would run longer to capture different traffic periods and monitor the guardrail metric.
 
 ## Statistical Evaluation
 
-For latency, I used Welch’s two-sample t-test and confidence intervals around the mean.
+For latency, I used Welch’s two-sample t-test and confidence intervals on the mean.
 
-For groundedness, task success, and error rate, I used two-proportion z-tests and confidence intervals for the observed rates.
+For groundedness, task success, and error rate, I used two-proportion z-tests together with confidence intervals for the observed rates.
 
 ## Observed Simulation Results
 
 ### Latency
 
-- A mean latency: `2561.90 ms`
-- B mean latency: `2138.49 ms`
+- Variant A mean latency: `2561.90 ms`
+- Variant B mean latency: `2138.49 ms`
 - improvement: `423.41 ms`
 - p-value: `1.13e-71`
 
 ### Groundedness
 
-- A groundedness: `0.8319`
-- B groundedness: `0.8927`
+- Variant A groundedness: `0.8319`
+- Variant B groundedness: `0.8927`
 - absolute lift: `0.0608`
 - p-value: `2.35e-08`
 
 ### Task Success
 
-- A task success: `0.8842`
-- B task success: `0.9311`
+- Variant A task success: `0.8842`
+- Variant B task success: `0.9311`
 - absolute lift: `0.0469`
 - p-value: `2.95e-07`
 
 ### Error Rate
 
-- A error rate: `0.0361`
-- B error rate: `0.0379`
+- Variant A error rate: `0.0361`
+- Variant B error rate: `0.0379`
 - absolute change: `+0.0019`
 - p-value: `0.7562`
 
-The simulated error-rate difference is not statistically significant, so the speed and quality gains are not offset by a meaningful reliability penalty in this run.
+The error-rate difference is not statistically significant, so the gains in latency and quality are not offset by a meaningful reliability regression in this simulation.
 
 ## Decision Rule
 
-I would recommend shipping Variant B if:
+I would recommend shipping Variant B if all of the following are true:
 
-1. latency improves significantly
-2. groundedness improves or at least does not regress
-3. error rate does not show a meaningful increase
+1. latency improves in a statistically meaningful way
+2. groundedness improves, or at least does not decline
+3. the guardrail metric does not show a meaningful regression
 
-Based on the observed simulation output, Variant B meets those conditions.
+Based on the simulated results, Variant B satisfies those conditions.

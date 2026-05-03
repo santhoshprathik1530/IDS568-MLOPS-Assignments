@@ -2,52 +2,52 @@
 
 ## Model Summary
 
-This project uses a retrieval-augmented generation workflow rather than a single fine-tuned task model. The core response model is:
+This project does not revolve around a single fine-tuned task model. Instead, it uses a retrieval-augmented generation workflow with a lightweight agent layer. The main generation model is:
 
 - `meta-llama/Llama-3.1-8B-Instruct`
-- served through OpenRouter
+- accessed through OpenRouter
 
-The system also depends on:
+The surrounding retrieval stack includes:
 
 - embedding model: `sentence-transformers/all-MiniLM-L6-v2`
-- retriever: `FAISS IndexFlatL2`
-- document corpus: 8 small course-focused knowledge documents embedded directly in `src/common/rag_pipeline.py`
+- vector store: `FAISS IndexFlatL2`
+- document corpus: eight short course-focused documents defined in `src/common/rag_pipeline.py`
 
 ## Intended Use
 
-The intended use is a small, monitored RAG + agent service for answering questions and completing short analysis tasks about the course topics used in the project corpus.
+The intended use is a small RAG plus agent service for grounded question answering and short evidence-based tasks over the included project corpus.
 
-This system is appropriate for:
+In its current form, the system is appropriate for:
 
-- grounded question answering over the included knowledge base
-- short structured evidence extraction
-- simple agent tasks that depend on retrieval followed by one synthesis step
+- answering course-related questions with retrieved support
+- short evidence extraction tasks
+- simple agent workflows that rely on retrieval followed by one synthesis step
 
 ## Out-of-Scope Use
 
-This system is not designed for:
+This system is not intended for:
 
-- open-domain factual question answering
-- legal, medical, or financial decision support
-- autonomous multi-step tool use beyond the narrow course-task workflow
-- handling regulated or sensitive personal data
+- open-domain factual assistance
+- legal, financial, or medical decision support
+- autonomous multi-step tool execution outside the narrow project workflow
+- handling sensitive or regulated personal data
 
 ## Training and Data Description
 
-The generative model itself was not trained as part of this project. It is an external open-weight instruct model accessed through OpenRouter.
+The generation model itself was not trained as part of this project. It is an externally hosted open-weight instruct model.
 
-The local knowledge base used for retrieval consists of 8 short, synthetic course-aligned documents covering:
+The local retrieval corpus is intentionally small and synthetic. It contains eight short documents covering:
 
 - RAG architecture
 - chunking strategy
 - embedding models
-- FAISS and vector retrieval
-- grounding and citations
+- FAISS retrieval
+- grounding and citation practice
 - latency measurement
 - agent tool-use policy
 - failure analysis
 
-Because the corpus is small and synthetic, this system should be understood as a course project artifact rather than a domain-complete knowledge assistant.
+Because the corpus is narrow and course-specific, this system should be treated as a project artifact rather than as a general-purpose knowledge assistant.
 
 ## Performance
 
@@ -81,40 +81,40 @@ From the 10-task agent evaluation:
 
 ## Limitations and Failure Modes
 
-The biggest limitation is the size and scope of the local corpus. Retrieval quality is constrained by the fact that only 8 documents are available, so top-k retrieval can easily return a mix of useful and only partly relevant chunks.
+The most important limitation is the size of the corpus. With only eight documents, retrieval quality is bounded by how much of the answer can be supported by a very small knowledge base.
 
 Observed failure modes include:
 
-- partial retrieval where only one of multiple expected supporting documents is returned
-- latency spikes in generation
-- occasional missing citations in final answers
-- weak support for questions outside the narrow corpus boundary
+- partial retrieval, where only part of the relevant support is returned
+- latency spikes during generation
+- occasional missing citations in the final answer
+- weak performance on questions that stretch beyond the project corpus
 
-The agent also depends on a constrained stopping policy. Without that policy, earlier versions of the controller looped too much and produced inefficient traces.
+The agent also depends on a constrained stopping policy. Earlier versions of the controller were more likely to overuse tools, which made traces longer and less reliable.
 
 ## Ethical Risks and Considerations
 
-This system has relatively low direct social impact because the corpus is small and course-specific, but there are still governance concerns:
+The project has relatively low direct social impact because it is built around a synthetic, course-specific corpus. Even so, there are meaningful governance concerns:
 
-- answers may appear more confident than the retrieved evidence justifies
+- the model may sound more confident than the evidence supports
 - missing citations can hide weak grounding
 - stale or incomplete knowledge can lead to misleading summaries
-- users might overgeneralize the system beyond its intended scope
+- users may overextend the system beyond its intended scope
 
 ## Monitoring and Governance Hooks
 
-The final project adds operational controls around the base system:
+The final project adds several operational controls around the base system:
 
-- Prometheus metrics for latency, request counts, anomaly signals, drift score, and agent step counts
-- A/B testing simulation to evaluate proposed changes before rollout
-- Audit trail logging for version and intervention events
-- Drift and risk analysis in later components of the final project
+- Prometheus metrics for latency, request count, anomaly signals, drift score, and agent step counts
+- an A/B simulation for evaluating retrieval and formatting changes
+- a structured audit trail for model and intervention events
+- drift analysis and formal risk review documents
 
 ## Human Oversight
 
-This system should be treated as an assistive tool rather than an authoritative one. For any use beyond the course demonstration setting, human review would be required whenever:
+This system should be treated as an assistive tool, not as an authority. Human review is especially important when:
 
 - citations are missing
-- drift signals are elevated
+- drift signals rise above baseline
 - retrieval support appears weak
-- the task affects a high-risk downstream decision
+- a task could affect a high-stakes decision
